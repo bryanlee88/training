@@ -12,11 +12,11 @@ variable "aws_region" {
 }
 
 variable "count" {
-  default = 3
+  default = 2
 }
 
 variable "num_webs" {
-default = "3"
+default = "2"
 }
 
 variable "command" {
