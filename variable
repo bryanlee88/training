@@ -1,0 +1,15 @@
+variable "num_webs" {
+  default = "2"
+}
+resource "aws_instance" "web" {
+  count		= "${var.num_webs}"
+  ami		= "ami-50759d3d"
+  instance_type = "t2.micro"
+
+  subnet_id 	= "subnet-22a34f8"
+  vpc_security_group_ids = [sg-ab2da4e]
+  
+ tags {
+ 
+ "Name" = 'web ${count.index+1}/$(var.num_webs}"
+ }
